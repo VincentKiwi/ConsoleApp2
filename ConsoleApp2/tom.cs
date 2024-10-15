@@ -3,68 +3,68 @@ using System.Collections.Generic;
 
 public class tamagotchi
 {
-private int hunger;
-private int boredom;
-private List<string> words = new List<string>() {"booonk"};
-private bool isAlive;
-public string name;
+    private int hunger;
+    private int boredom;
+    private List<string> words = new List<string>() { "booonk" };
+    private bool isAlive;
+    public string name;
 
-public tamagotchi()
-{
-    isAlive = true;
-}
-
-public void Feed()
-{
-    Console.WriteLine($"[{name}] is fed, [{name}] is becoming more full ");
-    hunger -= 2;
-    if (hunger < 0)
+    public tamagotchi()
     {
-        hunger = 0;
+        isAlive = true;
     }
-}
-public void word()
-{
-    int wordNum =RandomAccess.Shared.Next(words.Count);
-    Console.WriteLine($"[{name}] i know:{words[wordNum]}");
-    ReduceBoredom();
-}
-private void learn(string word)
-{
-    Console.WriteLine($"[{name}] learns: {word}");
-    words.Add(word);
-    ReduceBoredome();
-}
 
-public void Run()
-{
-    hunger++;
-    boredom++;
-    if (hunger > 10 || boredom > 10)
+    public void Feed()
     {
-        isAlive = false;
+        Console.WriteLine($"[{name}] is fed, [{name}] is becoming more full ");
+        hunger -= 2;
+        if (hunger < 0)
+        {
+            hunger = 0;
+        }
     }
-}
- public void printstats()
- {
-    Console.WriteLine($"name = ______ hunger= {hunger}______ bordom = {boredom} _____ learned words = {word.Count} ");
- }
-public bool GetAlive()
-{
-    return isAlive;
-}
+    public void word()
+    {
+        int wordNum = Random.Shared.Next(words.Count);
+        Console.WriteLine($"[{name}] i know:{words[wordNum]}");
+        ReduceBoredome();
+    }
+    public void learn(string word)
+    {
+        Console.WriteLine($"[{name}] learns: {word}");
+        words.Add(word);
+        ReduceBoredome();
+    }
 
-public void ReduceBoredome()
-{
-    Console.WriteLine($"[{name}] is now less bored");
+    public void Run()
+    {
+        hunger++;
+        boredom++;
+        if (hunger > 10 || boredom > 10)
+        {
+            isAlive = false;
+        }
+    }
+    public void printstats()
+    {
+        Console.WriteLine($"name = ______ hunger= {hunger}______ bordom = {boredom} _____ learned words = {words.Count} ");
+    }
+    public bool GetAlive()
+    {
+        return isAlive;
+    }
 
-boredom -= 2;
-if (boredom < 0)
-{
-    ReduceBoredome = 0;
-}
+    public void ReduceBoredome()
+    {
+        Console.WriteLine($"[{name}] is now less bored");
 
-}
+        boredom -= 2;
+        if (boredom < 0)
+        {
+            boredom = 0;
+        }
+
+    }
 
 
 
