@@ -45,6 +45,15 @@ public void Run()
         isAlive = false;
     }
 }
+ public void printstats()
+ {
+    Console.WriteLine($"name = ______ hunger= {hunger}______ bordom = {boredom} _____ learned words = {word.Count} ");
+ }
+public bool GetAlive()
+{
+    return isAlive;
+}
+
 
 
 
