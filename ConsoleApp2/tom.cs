@@ -31,7 +31,7 @@ public void word()
 }
 private void learn(string word)
 {
-    Console.WriteLine($("[{name}] learns: {word}"));
+    Console.WriteLine($"[{name}] learns: {word}");
     words.Add(word);
     ReduceBoredome();
 }
