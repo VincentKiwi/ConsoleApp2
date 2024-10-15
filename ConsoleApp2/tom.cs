@@ -54,6 +54,18 @@ public bool GetAlive()
     return isAlive;
 }
 
+public void ReduceBoredome()
+{
+    Console.WriteLine($"[{name}] is now less bored");
+
+boredom -= 2;
+if (boredom < 0)
+{
+    ReduceBoredome = 0;
+}
+
+}
+
 
 
 
