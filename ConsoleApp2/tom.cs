@@ -23,6 +23,29 @@ public void Feed()
         hunger = 0;
     }
 }
+public void word()
+{
+    int wordNum =RandomAccess.Shared.Next(words.Count);
+    Console.WriteLine($"[{name}] i know:{words[wordNum]}");
+    ReduceBoredom();
+}
+private void learn(string word)
+{
+    Console.WriteLine($("[{name}] learns: {word}"));
+    words.Add(word);
+    ReduceBoredome();
+}
+
+public void Run()
+{
+    hunger++;
+    boredom++;
+    if (hunger > 10 || boredom > 10)
+    {
+        isAlive = false;
+    }
+}
+
 
 
 
